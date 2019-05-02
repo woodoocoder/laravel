@@ -15,7 +15,7 @@
         "laravel/tinker": "^1.0",
         "laravolt/avatar": "^2.2",
         "mpociot/laravel-apidoc-generator": "^3.5",
-        "woodoocoder/laravel-location": "^0.1.0"
+        "woodoocoder/laravel-location": "^0.2.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
