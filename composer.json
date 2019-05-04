@@ -7,15 +7,6 @@
         "laravel"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "packages/laravel-location",
-            "options": {
-                "symlink": true
-            }
-        }
-    ], 
     "require": {
         "php": "^7.1.3",
         "barryvdh/laravel-cors": "^0.11.3",
@@ -25,7 +16,7 @@
         "laravel/tinker": "^1.0",
         "laravolt/avatar": "^2.2",
         "mpociot/laravel-apidoc-generator": "^3.5",
-        "woodoocoder/laravel-location": "master@dev"
+        "woodoocoder/laravel-location": "^0.2.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

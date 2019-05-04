@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "766ec5fbd7c4549539171438048e19fc",
+    "content-hash": "461e482761d44ef706dcf88ef1f0abe2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4293,11 +4293,17 @@
         },
         {
             "name": "woodoocoder/laravel-location",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "packages/laravel-location",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/woodoocoder/laravel-location.git",
                 "reference": "847229fd0394ebe6c39c70d492d6d17359fc88af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/woodoocoder/laravel-location/zipball/847229fd0394ebe6c39c70d492d6d17359fc88af",
+                "reference": "847229fd0394ebe6c39c70d492d6d17359fc88af",
+                "shasum": ""
             },
             "type": "library",
             "extra": {
@@ -4313,6 +4319,7 @@
                     "Woodoocoder\\LaravelLocation\\Database\\Seeds\\": "src/database/seeds/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4322,9 +4329,7 @@
                     "email": "pavlyshyn.roma@gmail.com"
                 }
             ],
-            "transport-options": {
-                "symlink": true
-            }
+            "time": "2019-05-02T18:17:53+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -6110,9 +6115,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "woodoocoder/laravel-location": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
