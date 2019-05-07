@@ -22,3 +22,7 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('user', 'Api\AuthController@user');
     });
 });
+
+Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function () {
+    Route::put('', 'Api\UserController@update');
+});

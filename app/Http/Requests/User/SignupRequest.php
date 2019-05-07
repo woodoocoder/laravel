@@ -26,6 +26,7 @@ class SignupRequest extends FormRequest {
             'middlename' => 'string',
             'lastname' => 'required|string',
             'email' => 'required|string|email|unique:users',
+            'password' => 'required|string|confirmed',
 
             'options.gender' => 'required|string',
             'options.birthday' => 'required|date',
