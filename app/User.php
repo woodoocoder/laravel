@@ -50,5 +50,9 @@ class User extends Authenticatable {
     public function options() {
         return $this->hasOne(\App\Model\User\Options::class);
     }
+
+    public function information() {
+        return $this->hasOne(\App\Model\User\Information::class);
+    }
     
 }

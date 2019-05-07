@@ -4,14 +4,14 @@ namespace App\Model\User;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserInfoType extends Model {
+class InfoOption extends Model {
 
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'user_info_types';
+    protected $table = 'user_info_options';
 
     /**
      * The attributes that are mass assignable.
@@ -21,8 +21,4 @@ class UserInfoType extends Model {
     protected $fillable = [
         'name',
     ];
-
-    public function items() {
-        return $this->hasMany(\App\Model\User\UserInfoOption::class, 'type_id', 'id');
-    }
 }

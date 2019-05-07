@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\User\OptionsResource;
+use App\Http\Resources\User\InformationResource;
 use Storage;
 
 class UserResource extends JsonResource{
@@ -23,6 +24,7 @@ class UserResource extends JsonResource{
             'avatar_url' => Storage::url('avatars/'.$this->id.'/'.$this->avatar),
             'last_activity' => $this->last_activity,
             'options' => new OptionsResource($this->options),
+            'information' => new InformationResource($this->information),
         ];
     }
 }

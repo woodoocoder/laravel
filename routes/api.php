@@ -25,4 +25,7 @@ Route::group(['prefix' => 'auth'], function () {
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function () {
     Route::put('', 'Api\UserController@update');
+    Route::put('information', 'Api\UserController@information');
 });
+
+Route::get('information', 'Api\InformationController@index');
