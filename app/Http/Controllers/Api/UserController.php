@@ -29,15 +29,6 @@ class UserController extends Controller {
             }
         }
 
-        if(isset($data['information'])) {
-            if($item->information === null) {
-                $item->information()->save(new Information($data['information']));
-            }
-            else {
-                $item->information->update($data['information']);
-            }
-        }
-
         return response([
             'status' => 'success',
             'data' => new UserResource(User::findOrFail($user->id))
