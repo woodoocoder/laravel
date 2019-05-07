@@ -13,7 +13,7 @@ class UserInformation extends Migration {
      */
     public function up() {
         Schema::create('user_info_types', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name', 255)->nullable();
             $table->timestamps();
             $table->softDeletes();
@@ -22,7 +22,7 @@ class UserInformation extends Migration {
 
         Schema::create('user_info_options', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('type_id')->unsigned();
+            $table->integer('type_id')->unsigned();
             $table->string('name', 255)->nullable();
             $table->timestamps();
             $table->softDeletes();
