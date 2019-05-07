@@ -11,6 +11,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\SignupRequest;
 use App\Http\Requests\User\LoginRequest;
 use App\User;
+use App\Model\User\Options;
+
 use App\Http\Resources\UserResource;
 
 class AuthController extends Controller {
@@ -38,6 +40,11 @@ class AuthController extends Controller {
         ]);
         
         $user->save();
+        $user->options()->save(new Options([
+            'gender' => $request->options['gender'],
+            'birthday' => $request->options['birthday'],
+            'city_id' => $request->options['city_id'],
+        ]));
 
         $avatar = Avatar::create($request->firstname.' '.$request->lastname)
             ->getImageObject()->encode('png');

@@ -26,7 +26,12 @@ class SignupRequest extends FormRequest {
             'middlename' => 'string',
             'lastname' => 'required|string',
             'email' => 'required|string|email|unique:users',
-            'password' => 'required|string|confirmed'
+
+            'options.gender' => 'required|string',
+            'options.birthday' => 'required|date',
+            'options.city_id' => 'required|numeric',
+            'options.region_id' => 'numeric',
+            'options.country_id' => 'numeric'
         ];
     }
 }
