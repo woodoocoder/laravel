@@ -19,6 +19,7 @@ class InfoOption extends Model {
      * @var array
      */
     protected $fillable = [
+        'type_id',
         'name',
     ];
 }

@@ -14,6 +14,7 @@ class UserInformation extends Migration {
     public function up() {
         Schema::create('user_info_types', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('key', 120)->index()->nullable();
             $table->string('name', 255)->nullable();
             $table->timestamps();
             $table->softDeletes();

@@ -15,50 +15,71 @@ class UserInformation extends Seeder {
      */
     public function run() {
         $items = [
-            'Relationship' => [
-                'I’d prefer not to say',
-                'I’m in a complicated relationship',
-                'Single',
-                'Taken',
+            [
+                'name' => 'Relationship',
+                'key' => 'relationship',
+                'items' => [
+                    'I’d prefer not to say',
+                    'I’m in a complicated relationship',
+                    'Single',
+                    'Taken',
+                ]
             ],
-            'Living' => [
-                'I’d prefer not to say',
-                'By myself',
-                'Student dormitory',
-                'With parents',
-                'With partner',
-                'With roommate(s)',
+            [
+                'name' => 'Living',
+                'key' => 'living',
+                'items' => [
+                    'I’d prefer not to say',
+                    'By myself',
+                    'Student dormitory',
+                    'With parents',
+                    'With partner',
+                    'With roommate(s)',
+                ]
             ],
-            'Kids' => [
-                'I’d prefer not to say',
-                'Grown up',
-                'Already have',
-                'No, never',
-                'Someday',
+            [
+                'name' => 'Kids',
+                'key' => 'children',
+                'items' => [
+                    'I’d prefer not to say',
+                    'Grown up',
+                    'Already have',
+                    'No, never',
+                    'Someday',
+                ]
             ],
-            'Smoking' => [
-                'I’d prefer not to say',
-                'I’m a heavy smoker',
-                'I hate smoking',
-                'I don’t like it',
-                'I’m a social smoker',
-                'I smoke occasionally',
+            [
+                'name' => 'Smoking',
+                'key' => 'smoking',
+                'items' => [
+                    'I’d prefer not to say',
+                    'I’m a heavy smoker',
+                    'I hate smoking',
+                    'I don’t like it',
+                    'I’m a social smoker',
+                    'I smoke occasionally',
+                ]
             ],
-            'Drinking' => [
-                'I’d prefer not to say',
-                'I drink socially',
-                'I don’t drink',
-                'I’m against drinking',
-                'I drink a lot',
+            [
+                'name' => 'Drinking',
+                'key' => 'drinking',
+                'items' => [
+                    'I’d prefer not to say',
+                    'I drink socially',
+                    'I don’t drink',
+                    'I’m against drinking',
+                    'I drink a lot',
+                ]
             ],
         ];
 
-        foreach ($items as $k=>$v) {
+        foreach ($items as $t) {
             $type = UserInfoType::create([
-                'name' => $k
+                'key' => $t['key'],
+                'name' => $t['name']
             ]);
 
-            foreach ($v as $item) {
+            foreach ($t['items'] as $item) {
                 UserInfoOption::create([
                     'type_id' => $type->id,
                     'name' => $item

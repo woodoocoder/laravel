@@ -17,6 +17,7 @@ class InfoTypeResource extends JsonResource{
     public function toArray($request) {
         return [
             'name' => $this->name,
+            'key' => $this->key,
             'items' => InfoOptionResource::collection($this->items)
         ];
     }
