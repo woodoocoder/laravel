@@ -54,5 +54,8 @@ class User extends Authenticatable {
     public function information() {
         return $this->hasOne(\App\Model\User\Information::class);
     }
-    
+
+    public function filters() {
+        return $this->hasOne(\App\Model\User\Filter::class);
+    }
 }

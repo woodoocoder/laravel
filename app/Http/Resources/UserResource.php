@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\User\OptionsResource;
 use App\Http\Resources\User\InformationResource;
+use App\Http\Resources\User\FilterResource;
 use Storage;
 
 class UserResource extends JsonResource{
@@ -25,6 +26,7 @@ class UserResource extends JsonResource{
             'last_activity' => $this->last_activity,
             'options' => new OptionsResource($this->options),
             'information' => new InformationResource($this->information),
+            'filters' => new FilterResource($this->filters),
         ];
     }
 }
