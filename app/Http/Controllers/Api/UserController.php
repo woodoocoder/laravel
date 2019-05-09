@@ -37,7 +37,7 @@ class UserController extends Controller {
     }
 
 
-    public function information(Request $request) {
+    public function updateInformation(Request $request) {
         $user = $request->user();
         $data = $request->all();
 
@@ -58,7 +58,8 @@ class UserController extends Controller {
         ]);
     }
 
-    public function filters(Request $request) {
+    
+    public function updateFilters(Request $request) {
         $user = $request->user();
         $data = $request->all();
 

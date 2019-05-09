@@ -25,8 +25,8 @@ Route::group(['prefix' => 'auth'], function () {
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function () {
     Route::put('', 'Api\UserController@update');
-    Route::put('information', 'Api\UserController@information');
-    Route::put('filters', 'Api\UserController@filters');
+    Route::put('information', 'Api\UserController@updateInformation');
+    Route::put('filters', 'Api\UserController@updateFilters');
 });
 
 Route::get('information', 'Api\DictionaryController@information');
