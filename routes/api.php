@@ -19,11 +19,11 @@ Route::group(['prefix' => 'auth'], function () {
   
     Route::group(['middleware' => 'auth:api'], function() {
         Route::get('logout', 'Api\AuthController@logout');
-        Route::get('user', 'Api\AuthController@user');
     });
 });
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function () {
+    Route::get('', 'Api\AuthController@user');
     Route::put('', 'Api\UserController@update');
     Route::put('information', 'Api\UserController@updateInformation');
     Route::put('filters', 'Api\UserController@updateFilters');

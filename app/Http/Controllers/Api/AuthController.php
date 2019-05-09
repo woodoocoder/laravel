@@ -34,6 +34,17 @@ class AuthController extends Controller {
      * @OA\Post(
      *     path="/api/auth/signup",
      *     tags={"Auth"},
+     *     @OA\RequestBody(
+     *         description="Create user object",
+     *         required=true,
+     *         @OA\JsonContent(
+     *              @OA\Property(property="firstname",type="string"),
+     *              @OA\Property(property="middlename",type="string"),
+     *              @OA\Property(property="lastname",type="string"),
+     *              @OA\Property(property="email",type="string",format="email"),
+     *              @OA\Property(property="password",type="string")
+     *         ),
+     *     ),
      *     @OA\Response(
      *         response=200,
      *         description="User registered",
@@ -88,12 +99,20 @@ class AuthController extends Controller {
      * @OA\Post(
      *     path="/api/auth/login",
      *     tags={"Auth"},
+     *     @OA\RequestBody(
+     *         description="Returns API token with given user email and password",
+     *         required=true,
+     *         @OA\JsonContent(
+     *              @OA\Property(property="email",type="string",format="email"),
+     *              @OA\Property(property="password",type="string")
+     *         ),
+     *     ),
      *     @OA\Response(
      *         response=200,
      *         description="User sign in",
-     *     ),
-     *     @OA\RequestBody(
-     *         required=true,
+     *         @OA\JsonContent(
+     *              @OA\Property(property="access_token",type="string")
+     *         ),
      *     )
      * )
      */
@@ -150,29 +169,4 @@ class AuthController extends Controller {
         ]);
     }
   
-    /**
-     * Get the authenticated User
-     *
-     * @return [json] user object
-     */
-
-    /**
-     * @OA\Get(
-     *     path="/api/auth/user",
-     *     tags={"Auth"},
-     *     @OA\Response(
-     *         response=200,
-     *         description="User data",
-     *     ),
-     *     @OA\RequestBody(
-     *         required=true,
-     *     )
-     * )
-     */
-    public function user(Request $request) {
-        return response([
-            'status' => 'success',
-            'data' => new UserResource($request->user())
-        ]);
-    }
 }

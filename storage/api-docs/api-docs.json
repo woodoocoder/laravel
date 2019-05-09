@@ -13,7 +13,33 @@
                 ],
                 "operationId": "App\\Http\\Controllers\\Api\\AuthController::signup",
                 "requestBody": {
-                    "required": true
+                    "description": "Create user object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "firstname": {
+                                        "type": "string"
+                                    },
+                                    "middlename": {
+                                        "type": "string"
+                                    },
+                                    "lastname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
                 },
                 "responses": {
                     "200": {
@@ -29,11 +55,40 @@
                 ],
                 "operationId": "App\\Http\\Controllers\\Api\\AuthController::login",
                 "requestBody": {
-                    "required": true
+                    "description": "Returns API token with given user email and password",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
                 },
                 "responses": {
                     "200": {
-                        "description": "User sign in"
+                        "description": "User sign in",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -50,22 +105,6 @@
                 "responses": {
                     "200": {
                         "description": "User logout"
-                    }
-                }
-            }
-        },
-        "/api/auth/user": {
-            "get": {
-                "tags": [
-                    "Auth"
-                ],
-                "operationId": "App\\Http\\Controllers\\Api\\AuthController::user",
-                "requestBody": {
-                    "required": true
-                },
-                "responses": {
-                    "200": {
-                        "description": "User data"
                     }
                 }
             }
@@ -103,6 +142,26 @@
             }
         },
         "/api/user": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\UserController::user",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "User data"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            },
             "put": {
                 "tags": [
                     "User"

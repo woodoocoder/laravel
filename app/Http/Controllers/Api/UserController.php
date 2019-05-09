@@ -14,6 +14,36 @@ use App\Http\Resources\UserResource;
 
 class UserController extends Controller {
 
+
+    /**
+     * Get the authenticated User
+     *
+     * @return [json] user object
+     */
+
+    /**
+     * @OA\Get(
+     *     path="/api/user",
+     *     tags={"User"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="User data",
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *     ),
+     *     @OA\Response(response=403,description="Unauthorized"),
+     *     @OA\Response(response=500,description="Server error"),
+     * )
+     */
+    public function user(Request $request) {
+        return response([
+            'status' => 'success',
+            'data' => new UserResource($request->user())
+        ]);
+    }
+
+
     /**
      * @OA\Put(
      *     path="/api/user",
