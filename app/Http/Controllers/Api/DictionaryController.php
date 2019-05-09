@@ -13,6 +13,19 @@ use App\Http\Resources\User\SearchReasonResource;
 
 class DictionaryController extends Controller {
 
+    /**
+     * @OA\Get(
+     *     path="/api/information",
+     *     tags={"Dictionaries"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Personal info",
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *     )
+     * )
+     */
     public function information(Request $request) {
 
         return response([
@@ -21,6 +34,19 @@ class DictionaryController extends Controller {
         ]);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/api/reasons",
+     *     tags={"Dictionaries"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Why user registered",
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *     )
+     * )
+     */
     public function reasons(Request $request) {
 
         return response([

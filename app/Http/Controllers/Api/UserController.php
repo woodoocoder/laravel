@@ -14,6 +14,19 @@ use App\Http\Resources\UserResource;
 
 class UserController extends Controller {
 
+    /**
+     * @OA\Put(
+     *     path="/api/user",
+     *     tags={"User"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="User data updated",
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *     )
+     * )
+     */
     public function update(UpdateRequest $request) {
         $user = $request->user();
         $data = $request->all();
@@ -37,6 +50,19 @@ class UserController extends Controller {
     }
 
 
+    /**
+     * @OA\Put(
+     *     path="/api/user/information",
+     *     tags={"User"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="User information updated",
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *     )
+     * )
+     */
     public function updateInformation(Request $request) {
         $user = $request->user();
         $data = $request->all();
@@ -59,6 +85,19 @@ class UserController extends Controller {
     }
 
     
+    /**
+     * @OA\Put(
+     *     path="/api/user/filters",
+     *     tags={"User"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="User search filters updated",
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *     )
+     * )
+     */
     public function updateFilters(Request $request) {
         $user = $request->user();
         $data = $request->all();

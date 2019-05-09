@@ -1,0 +1,154 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Dating Project",
+        "description": "This is a sample Dating API server.",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/auth/signup": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\AuthController::signup",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "User registered"
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\AuthController::login",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "User sign in"
+                    }
+                }
+            }
+        },
+        "/api/auth/logout": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\AuthController::logout",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "User logout"
+                    }
+                }
+            }
+        },
+        "/api/auth/user": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\AuthController::user",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "User data"
+                    }
+                }
+            }
+        },
+        "/api/information": {
+            "get": {
+                "tags": [
+                    "Dictionaries"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\DictionaryController::information",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Personal info"
+                    }
+                }
+            }
+        },
+        "/api/reasons": {
+            "get": {
+                "tags": [
+                    "Dictionaries"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\DictionaryController::reasons",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Why user registered"
+                    }
+                }
+            }
+        },
+        "/api/user": {
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\UserController::update",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "User data updated"
+                    }
+                }
+            }
+        },
+        "/api/user/information": {
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\UserController::updateInformation",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "User information updated"
+                    }
+                }
+            }
+        },
+        "/api/user/filters": {
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\UserController::updateFilters",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "User search filters updated"
+                    }
+                }
+            }
+        }
+    }
+}

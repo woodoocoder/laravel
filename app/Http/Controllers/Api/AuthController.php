@@ -29,6 +29,20 @@ class AuthController extends Controller {
      * 
      * @return [string] message
      */
+
+    /**
+     * @OA\Post(
+     *     path="/api/auth/signup",
+     *     tags={"Auth"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="User registered",
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *     )
+     * )
+     */
     public function signup(SignupRequest $request) {
         
         $user = new User([
@@ -69,6 +83,20 @@ class AuthController extends Controller {
      * @return [string] token_type
      * @return [string] expires_at
      */
+
+    /**
+     * @OA\Post(
+     *     path="/api/auth/login",
+     *     tags={"Auth"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="User sign in",
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *     )
+     * )
+     */
     public function login(LoginRequest $request) {
 
         $credentials = request(['email', 'password']);
@@ -100,6 +128,20 @@ class AuthController extends Controller {
      *
      * @return [string] message
      */
+
+    /**
+     * @OA\Get(
+     *     path="/api/auth/logout",
+     *     tags={"Auth"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="User logout",
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *     )
+     * )
+     */
     public function logout(Request $request) {
         $request->user()->token()->revoke();
 
@@ -112,6 +154,20 @@ class AuthController extends Controller {
      * Get the authenticated User
      *
      * @return [json] user object
+     */
+
+    /**
+     * @OA\Get(
+     *     path="/api/auth/user",
+     *     tags={"Auth"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="User data",
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *     )
+     * )
      */
     public function user(Request $request) {
         return response([
