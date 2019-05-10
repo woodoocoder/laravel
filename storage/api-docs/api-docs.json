@@ -34,6 +34,9 @@
                                     },
                                     "password": {
                                         "type": "string"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string"
                                     }
                                 },
                                 "type": "object"
@@ -43,7 +46,14 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "User registered"
+                        "description": "User registered",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -82,6 +92,12 @@
                                 "schema": {
                                     "properties": {
                                         "access_token": {
+                                            "type": "string"
+                                        },
+                                        "token_type": {
+                                            "type": "string"
+                                        },
+                                        "expires_at": {
                                             "type": "string"
                                         }
                                     },
@@ -147,12 +163,30 @@
                     "User"
                 ],
                 "operationId": "App\\Http\\Controllers\\Api\\UserController::user",
-                "requestBody": {
-                    "required": true
-                },
                 "responses": {
                     "200": {
-                        "description": "User data"
+                        "description": "User data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/components/schemas/User"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "403": {
                         "description": "Unauthorized"
@@ -168,11 +202,54 @@
                 ],
                 "operationId": "App\\Http\\Controllers\\Api\\UserController::update",
                 "requestBody": {
-                    "required": true
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "firstname": {
+                                        "type": "string"
+                                    },
+                                    "middlename": {
+                                        "type": "string"
+                                    },
+                                    "lastname": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
                 },
                 "responses": {
                     "200": {
-                        "description": "User data updated"
+                        "description": "User data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/components/schemas/User"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -184,11 +261,56 @@
                 ],
                 "operationId": "App\\Http\\Controllers\\Api\\UserController::updateInformation",
                 "requestBody": {
-                    "required": true
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "relationship_id": {
+                                        "type": "integer"
+                                    },
+                                    "living_id": {
+                                        "type": "integer"
+                                    },
+                                    "children_id": {
+                                        "type": "integer"
+                                    },
+                                    "smoking_id": {
+                                        "type": "integer"
+                                    },
+                                    "drinking_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
                 },
                 "responses": {
                     "200": {
-                        "description": "User information updated"
+                        "description": "User data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/components/schemas/User"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -200,13 +322,263 @@
                 ],
                 "operationId": "App\\Http\\Controllers\\Api\\UserController::updateFilters",
                 "requestBody": {
-                    "required": true
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "gender": {
+                                        "type": "string"
+                                    },
+                                    "age_from": {
+                                        "type": "integer"
+                                    },
+                                    "age_to": {
+                                        "type": "integer"
+                                    },
+                                    "city_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
                 },
                 "responses": {
                     "200": {
-                        "description": "User search filters updated"
+                        "description": "User data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/components/schemas/User"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "UserFilter": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "reason": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/UserSearchReason"
+                                    }
+                                ]
+                            },
+                            "gender": {
+                                "type": "string"
+                            },
+                            "age_from": {
+                                "type": "integer"
+                            },
+                            "age_to": {
+                                "type": "integer"
+                            },
+                            "city_id": {
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "UserInfoOption": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "name": {
+                                "type": "string",
+                                "format": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "UserInformation": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "relationship": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/UserInfoOption"
+                                    }
+                                ]
+                            },
+                            "living": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/UserInfoOption"
+                                    }
+                                ]
+                            },
+                            "children": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/UserInfoOption"
+                                    }
+                                ]
+                            },
+                            "smoking": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/UserInfoOption"
+                                    }
+                                ]
+                            },
+                            "drinking": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/UserInfoOption"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "UserOptions": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "gender": {
+                                "type": "string",
+                                "format": "string"
+                            },
+                            "birthday": {
+                                "type": "string",
+                                "format": "date"
+                            },
+                            "country_id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "region_id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "city_id": {
+                                "type": "integer",
+                                "format": "integer"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "UserSearchReason": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "name": {
+                                "type": "string",
+                                "format": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "User": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "middlename": {
+                                "type": "string",
+                                "format": "string"
+                            },
+                            "lastname": {
+                                "type": "string",
+                                "format": "string"
+                            },
+                            "avatar_url": {
+                                "type": "string",
+                                "format": "string"
+                            },
+                            "last_activity": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "options": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/UserOptions"
+                                    }
+                                ]
+                            },
+                            "information": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/UserInformation"
+                                    }
+                                ]
+                            },
+                            "filters": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/UserFilter"
+                                    }
+                                ]
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
             }
         }
     }

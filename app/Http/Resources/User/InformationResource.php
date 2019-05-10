@@ -6,7 +6,41 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 use App\Http\Resources\User\InfoOptionResource;
 
-
+/**
+ *   @OA\Schema(
+ *   schema="UserInformation",
+ *   type="object",
+ *   allOf={
+ *       @OA\Schema(
+ *           @OA\Property(property="relationship", type="object",
+ *              allOf={
+ *                  @OA\JsonContent(ref="#/components/schemas/UserInfoOption")
+ *              }
+ *           ),
+ *           @OA\Property(property="living", type="object",
+ *              allOf={
+ *                  @OA\JsonContent(ref="#/components/schemas/UserInfoOption")
+ *              }
+ *           ),
+ *           @OA\Property(property="children", type="object",
+ *              allOf={
+ *                  @OA\JsonContent(ref="#/components/schemas/UserInfoOption")
+ *              }
+ *           ),
+ *           @OA\Property(property="smoking", type="object",
+ *              allOf={
+ *                  @OA\JsonContent(ref="#/components/schemas/UserInfoOption")
+ *              }
+ *           ),
+ *           @OA\Property(property="drinking", type="object",
+ *              allOf={
+ *                  @OA\JsonContent(ref="#/components/schemas/UserInfoOption")
+ *              }
+ *           ),
+ *       )
+ *   }
+ * )
+ */
 class InformationResource extends JsonResource{
 
     /**

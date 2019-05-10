@@ -26,11 +26,16 @@ class UserController extends Controller {
      *     path="/api/user",
      *     tags={"User"},
      *     @OA\Response(
-     *         response=200,
-     *         description="User data",
-     *     ),
-     *     @OA\RequestBody(
-     *         required=true,
+     *          response=200,
+     *          description="User data",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", format="string", type="string"),
+     *              @OA\Property(property="data", type="object",
+     *                  allOf={
+     *                      @OA\JsonContent(ref="#/components/schemas/User")
+     *                  }
+     *              )
+     *          )
      *     ),
      *     @OA\Response(response=403,description="Unauthorized"),
      *     @OA\Response(response=500,description="Server error"),
@@ -48,13 +53,27 @@ class UserController extends Controller {
      * @OA\Put(
      *     path="/api/user",
      *     tags={"User"},
-     *     @OA\Response(
-     *         response=200,
-     *         description="User data updated",
-     *     ),
      *     @OA\RequestBody(
      *         required=true,
-     *     )
+     *         @OA\JsonContent(
+     *              @OA\Property(property="firstname",type="string"),
+     *              @OA\Property(property="middlename",type="string"),
+     *              @OA\Property(property="lastname",type="string"),
+     *              @OA\Property(property="email",type="string",format="email")
+     *         ),
+     *     ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="User data",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", format="string", type="string"),
+     *              @OA\Property(property="data", type="object",
+     *                  allOf={
+     *                      @OA\JsonContent(ref="#/components/schemas/User")
+     *                  }
+     *              )
+     *          )
+     *     ),
      * )
      */
     public function update(UpdateRequest $request) {
@@ -84,13 +103,28 @@ class UserController extends Controller {
      * @OA\Put(
      *     path="/api/user/information",
      *     tags={"User"},
-     *     @OA\Response(
-     *         response=200,
-     *         description="User information updated",
-     *     ),
      *     @OA\RequestBody(
      *         required=true,
-     *     )
+     *         @OA\JsonContent(
+     *              @OA\Property(property="relationship_id",type="integer"),
+     *              @OA\Property(property="living_id",type="integer"),
+     *              @OA\Property(property="children_id",type="integer"),
+     *              @OA\Property(property="smoking_id",type="integer"),
+     *              @OA\Property(property="drinking_id",type="integer")
+     *         ),
+     *     ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="User data",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", format="string", type="string"),
+     *              @OA\Property(property="data", type="object",
+     *                  allOf={
+     *                      @OA\JsonContent(ref="#/components/schemas/User")
+     *                  }
+     *              )
+     *          )
+     *     ),
      * )
      */
     public function updateInformation(Request $request) {
@@ -119,13 +153,27 @@ class UserController extends Controller {
      * @OA\Put(
      *     path="/api/user/filters",
      *     tags={"User"},
-     *     @OA\Response(
-     *         response=200,
-     *         description="User search filters updated",
-     *     ),
      *     @OA\RequestBody(
      *         required=true,
-     *     )
+     *         @OA\JsonContent(
+     *              @OA\Property(property="gender",type="string"),
+     *              @OA\Property(property="age_from",type="integer"),
+     *              @OA\Property(property="age_to",type="integer"),
+     *              @OA\Property(property="city_id",type="integer")
+     *         ),
+     *     ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="User data",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", format="string", type="string"),
+     *              @OA\Property(property="data", type="object",
+     *                  allOf={
+     *                      @OA\JsonContent(ref="#/components/schemas/User")
+     *                  }
+     *              )
+     *          )
+     *     ),
      * )
      */
     public function updateFilters(Request $request) {

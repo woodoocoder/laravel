@@ -18,19 +18,6 @@ use App\Http\Resources\UserResource;
 class AuthController extends Controller {
 
     /**
-     * Create user
-     *
-     * @param  [string] firstname
-     * @param  [string] middlename
-     * @param  [string] lastname
-     * @param  [string] email
-     * @param  [string] password
-     * @param  [string] password_confirmation
-     * 
-     * @return [string] message
-     */
-
-    /**
      * @OA\Post(
      *     path="/api/auth/signup",
      *     tags={"Auth"},
@@ -42,12 +29,14 @@ class AuthController extends Controller {
      *              @OA\Property(property="middlename",type="string"),
      *              @OA\Property(property="lastname",type="string"),
      *              @OA\Property(property="email",type="string",format="email"),
-     *              @OA\Property(property="password",type="string")
+     *              @OA\Property(property="password",type="string"),
+     *              @OA\Property(property="password_confirmation",type="string")
      *         ),
      *     ),
      *     @OA\Response(
      *         response=200,
      *         description="User registered",
+     *         @OA\JsonContent(ref="#/components/schemas/User")
      *     ),
      *     @OA\RequestBody(
      *         required=true,
@@ -83,17 +72,6 @@ class AuthController extends Controller {
         ], 201);
     }
 
-    /**
-     * Login user and create token
-     *
-     * @param  [string] email
-     * @param  [string] password
-     * @param  [boolean] remember_me
-     * 
-     * @return [string] access_token
-     * @return [string] token_type
-     * @return [string] expires_at
-     */
 
     /**
      * @OA\Post(
@@ -111,7 +89,9 @@ class AuthController extends Controller {
      *         response=200,
      *         description="User sign in",
      *         @OA\JsonContent(
-     *              @OA\Property(property="access_token",type="string")
+     *              @OA\Property(property="access_token",type="string"),
+     *              @OA\Property(property="token_type",type="string"),
+     *              @OA\Property(property="expires_at",type="string"),
      *         ),
      *     )
      * )
@@ -141,12 +121,6 @@ class AuthController extends Controller {
             'expires_at' => Carbon::parse($tokenResult->token->expires_at)->toDateTimeString()
         ]);
     }
-  
-    /**
-     * Logout user (Revoke the token)
-     *
-     * @return [string] message
-     */
 
     /**
      * @OA\Get(

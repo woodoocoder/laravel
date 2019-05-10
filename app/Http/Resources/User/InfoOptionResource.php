@@ -4,6 +4,19 @@ namespace App\Http\Resources\User;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+
+/**
+ *   @OA\Schema(
+ *   schema="UserInfoOption",
+ *   type="object",
+ *   allOf={
+ *       @OA\Schema(
+ *           @OA\Property(property="id", format="integer", type="integer"),
+ *           @OA\Property(property="name", format="string", type="string")
+ *       )
+ *   }
+ * )
+ */
 class InfoOptionResource extends JsonResource{
 
     /**

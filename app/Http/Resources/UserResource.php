@@ -8,6 +8,36 @@ use App\Http\Resources\User\InformationResource;
 use App\Http\Resources\User\FilterResource;
 use Storage;
 
+/**
+ *   @OA\Schema(
+ *   schema="User",
+ *   type="object",
+ *   allOf={
+ *       @OA\Schema(
+ *           @OA\Property(property="id", format="integer", type="integer"),
+ *           @OA\Property(property="middlename", format="string", type="string"),
+ *           @OA\Property(property="lastname", format="string", type="string"),
+ *           @OA\Property(property="avatar_url", format="string", type="string"),
+ *           @OA\Property(property="last_activity", format="date-time", type="string"),
+ *           @OA\Property(property="options", type="object",
+ *              allOf={
+ *                  @OA\JsonContent(ref="#/components/schemas/UserOptions")
+ *              }
+ *           ),
+ *           @OA\Property(property="information", type="object",
+ *              allOf={
+ *                  @OA\JsonContent(ref="#/components/schemas/UserInformation")
+ *              }
+ *           ),
+ *           @OA\Property(property="filters", type="object",
+ *              allOf={
+ *                  @OA\JsonContent(ref="#/components/schemas/UserFilter")
+ *              }
+ *           ),
+ *       )
+ *   }
+ * )
+ */
 class UserResource extends JsonResource{
 
     /**
