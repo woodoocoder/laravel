@@ -159,7 +159,7 @@ class UserController extends Controller {
      *              @OA\Property(property="gender",type="string"),
      *              @OA\Property(property="age_from",type="integer"),
      *              @OA\Property(property="age_to",type="integer"),
-     *              @OA\Property(property="city_id",type="inter")
+     *              @OA\Property(property="city_id",type="integer")
      *         ),
      *     ),
      *     @OA\Response(
