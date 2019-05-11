@@ -157,12 +157,12 @@
                 }
             }
         },
-        "/api/search": {
+        "/api/dating": {
             "get": {
                 "tags": [
-                    "Search"
+                    "Users"
                 ],
-                "operationId": "App\\Http\\Controllers\\Api\\SearchController::users",
+                "operationId": "App\\Http\\Controllers\\Api\\SearchController::dating",
                 "responses": {
                     "200": {
                         "description": "Users list",
@@ -375,7 +375,7 @@
                                         "type": "integer"
                                     },
                                     "city_id": {
-                                        "type": "inter"
+                                        "type": "integer"
                                     }
                                 },
                                 "type": "object"

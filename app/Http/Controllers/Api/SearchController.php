@@ -13,7 +13,7 @@ class SearchController extends Controller {
     /**
      * @OA\Get(
      *     path="/api/dating",
-     *     tags={"Search"},
+     *     tags={"Users"},
      *     @OA\Response(
      *          response=200,
      *          description="Users list",
