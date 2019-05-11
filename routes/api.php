@@ -23,11 +23,17 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function () {
-    Route::get('', 'Api\AuthController@user');
+    Route::get('', 'Api\UserController@user');
     Route::put('', 'Api\UserController@update');
     Route::put('information', 'Api\UserController@updateInformation');
     Route::put('filters', 'Api\UserController@updateFilters');
 });
+
+
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::get('dating', 'Api\SearchController@dating');
+});
+
 
 Route::get('information', 'Api\DictionaryController@information');
 Route::get('reasons', 'Api\DictionaryController@reasons');
