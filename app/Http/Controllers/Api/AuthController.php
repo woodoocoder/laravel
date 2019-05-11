@@ -62,7 +62,7 @@ class AuthController extends Controller {
 
         $avatar = Avatar::create($request->firstname.' '.$request->lastname)
             ->getImageObject()->encode('png');
-        Storage::put('avatars/'.$user->id.'/avatar.png', (string) $avatar);
+        Storage::put('public/avatars/'.$user->id.'/avatar.png', (string) $avatar);
         
         $user = User::find($user->id);
 
