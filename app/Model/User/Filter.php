@@ -31,4 +31,9 @@ class Filter extends Model {
     public function reason() {
         return $this->hasOne(\App\Model\User\SearchReason::class, 'id', 'reason_id');
     }
+
+
+    public function city() {
+        return $this->hasOne(\Woodoocoder\LaravelLocation\Model\City::class, 'id', 'city_id');
+    }
 }

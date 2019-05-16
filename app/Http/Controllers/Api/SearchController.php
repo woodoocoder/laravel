@@ -31,12 +31,22 @@ class SearchController extends Controller {
     public function dating(Request $request) {
         $user = $request->user();
 
-        
         $query = User::whereHas('options', function ($query) use ($user) {
-            if($user->filters && $user->filters->gender) {
-                $query->where('gender', '=', $user->filters->gender);
+            if($user->filters) {
+                if($user->filters->gender) {
+                    $query->where('gender', '=', $user->filters->gender);
+                }
+                /*
+                if($user->filters->age_from) {
+                    $query->where('age_from', '=', $user->filters->age_from);
+                }
+                if($user->filters->age_to) {
+                    $query->where('age_to', '=', $user->filters->age_to);
+                }
+                */
             }
         });
+        
         
         $list = $query->orderBy('id', 'desc')->paginate(10);
 

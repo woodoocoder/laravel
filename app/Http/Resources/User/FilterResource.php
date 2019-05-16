@@ -41,7 +41,7 @@ class FilterResource extends JsonResource{
             'gender' => $this->gender,
             'age_from' => $this->age_from,
             'age_to' => $this->age_to,
-            'city_id' => $this->city_id,
+            'city' => new \Woodoocoder\LaravelLocation\Resource\CityResource($this->city),
         ];
     }
 }
