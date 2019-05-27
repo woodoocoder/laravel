@@ -22,4 +22,9 @@ class InfoOption extends Model {
         'type_id',
         'name',
     ];
+
+
+    public function type() {
+        return $this->hasOne(\App\Model\User\UserInfoType::class, 'id', 'type_id');
+    }
 }

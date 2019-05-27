@@ -157,6 +157,84 @@
                 }
             }
         },
+        "/api/location/countries": {
+            "get": {
+                "tags": [
+                    "Location"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\LocationController::countries",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "Search string",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Countries List"
+                    }
+                }
+            }
+        },
+        "/api/location/regions": {
+            "get": {
+                "tags": [
+                    "Location"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\LocationController::regions",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "Search string",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Regions List"
+                    }
+                }
+            }
+        },
+        "/api/location/cities": {
+            "get": {
+                "tags": [
+                    "Location"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\LocationController::cities",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "Search string",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cities List"
+                    }
+                }
+            }
+        },
         "/api/dating": {
             "get": {
                 "tags": [
