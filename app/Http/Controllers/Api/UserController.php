@@ -14,13 +14,6 @@ use App\Http\Resources\UserResource;
 
 class UserController extends Controller {
 
-
-    /**
-     * Get the authenticated User
-     *
-     * @return [json] user object
-     */
-
     /**
      * @OA\Get(
      *     path="/api/user",
