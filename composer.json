@@ -16,7 +16,8 @@
         "laravel/passport": "^7.2",
         "laravel/tinker": "^1.0",
         "laravolt/avatar": "^2.2",
-        "woodoocoder/laravel-location": "0.2.2",
+        "woodoocoder/laravel-location": "^0.2",
+        "woodoocoder/laravel-dialogs": "master@dev",
         "zircote/swagger-php": "3.*"
     },
     "require-dev": {
@@ -27,6 +28,15 @@
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^7.5"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/laravel-dialogs",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
