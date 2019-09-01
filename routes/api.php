@@ -37,9 +37,3 @@ Route::group(['middleware' => 'auth:api'], function() {
 
 Route::get('information', 'Api\DictionaryController@information');
 Route::get('reasons', 'Api\DictionaryController@reasons');
-
-Route::group(['prefix' => 'location'], function () {
-    Route::get('countries', 'Api\LocationController@countries');
-    Route::get('regions/{countryId?}', 'Api\LocationController@regions');
-    Route::get('cities/{countryId?}', 'Api\LocationController@cities');
-});

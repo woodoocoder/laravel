@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Passport\PassportServiceProvider::class,
+        Woodoocoder\LaravelDialogs\DialogsServiceProvider::class,
 
         /*
          * Application Service Providers...

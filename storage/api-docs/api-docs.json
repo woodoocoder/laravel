@@ -488,6 +488,279 @@
                     }
                 }
             }
+        },
+        "/api/dialogs": {
+            "get": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\DialogsController::index",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Dialogs list",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Dialog"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\DialogsController::store",
+                "responses": {
+                    "200": {
+                        "description": "Create Dialog",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/components/schemas/Dialog"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/dialogs/{dialogId}": {
+            "get": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\DialogsController::show",
+                "responses": {
+                    "200": {
+                        "description": "Get Dialog",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/components/schemas/Dialog"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\DialogsController::update",
+                "responses": {
+                    "200": {
+                        "description": "Update Dialog",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "format": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/components/schemas/Dialog"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\DialogsController::destroy",
+                "responses": {
+                    "200": {
+                        "description": "Delete Dialog"
+                    }
+                }
+            }
+        },
+        "/api/dialogs/{dialogId}/messages": {
+            "get": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\MessagesController::index",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Messages list",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Message"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\MessagesController::store",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Create Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Message"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/dialogs/{dialogId}/messages/{messageId}": {
+            "put": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\MessagesController::update",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Update Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Message"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\MessagesController::destroy",
+                "responses": {
+                    "200": {
+                        "description": "Delete Message"
+                    }
+                }
+            }
+        },
+        "/api/dialogs/{dialogId}/participants": {
+            "get": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\ParticipantsController::index",
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Participants List",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Participant"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -690,6 +963,94 @@
                                         "$ref": "#/components/schemas/UserFilter"
                                     }
                                 ]
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "Dialog": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "subject": {
+                                "type": "string"
+                            },
+                            "count_users": {
+                                "type": "integer"
+                            },
+                            "count_messages": {
+                                "type": "integer"
+                            },
+                            "created_at": {
+                                "type": "datetime"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "Message": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "dialog_id": {
+                                "type": "integer"
+                            },
+                            "user_id": {
+                                "type": "integer"
+                            },
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "Participant": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "user": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "City": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "country": {
+                                "type": "string",
+                                "format": "string"
+                            },
+                            "region": {
+                                "type": "string",
+                                "format": "string"
                             }
                         },
                         "type": "object"

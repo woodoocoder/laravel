@@ -6,5 +6,5 @@ return [
     "table_prefix" => "location_",
 
 
-    'use_default_routes' => false,
+    'use_default_routes' => true,
 ];
