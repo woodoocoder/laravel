@@ -43,6 +43,34 @@ class UserController extends Controller {
 
 
     /**
+     * @OA\Get(
+     *     path="/api/user/show",
+     *     tags={"User"},
+     *     @OA\Response(
+     *          response=200,
+     *          description="User data",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", format="string", type="string"),
+     *              @OA\Property(property="data", type="object",
+     *                  allOf={
+     *                      @OA\JsonContent(ref="#/components/schemas/User")
+     *                  }
+     *              )
+     *          )
+     *     ),
+     *     @OA\Response(response=403,description="Unauthorized"),
+     *     @OA\Response(response=500,description="Server error"),
+     * )
+     */
+    public function show(int $userId, Request $request) {
+        return response([
+            'status' => 'success',
+            'data' => new UserResource(User::findOrFail($userId))
+        ]);
+    }
+
+
+    /**
      * @OA\Put(
      *     path="/api/user",
      *     tags={"User"},

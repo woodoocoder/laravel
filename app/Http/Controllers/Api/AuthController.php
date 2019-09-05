@@ -29,8 +29,7 @@ class AuthController extends Controller {
      *              @OA\Property(property="middlename",type="string"),
      *              @OA\Property(property="lastname",type="string"),
      *              @OA\Property(property="email",type="string",format="email"),
-     *              @OA\Property(property="password",type="string"),
-     *              @OA\Property(property="password_confirmation",type="string")
+     *              @OA\Property(property="password",type="string")
      *         ),
      *     ),
      *     @OA\Response(
@@ -60,9 +59,11 @@ class AuthController extends Controller {
             'city_id' => $request->options['city_id'],
         ]));
 
+        /*
         $avatar = Avatar::create($request->firstname.' '.$request->lastname)
             ->getImageObject()->encode('png');
         Storage::put('public/avatars/'.$user->id.'/avatar.png', (string) $avatar);
+        */
         
         $user = User::find($user->id);
 

@@ -157,84 +157,6 @@
                 }
             }
         },
-        "/api/location/countries": {
-            "get": {
-                "tags": [
-                    "Location"
-                ],
-                "operationId": "App\\Http\\Controllers\\Api\\LocationController::countries",
-                "parameters": [
-                    {
-                        "name": "q",
-                        "in": "query",
-                        "description": "Search string",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "required": true
-                },
-                "responses": {
-                    "200": {
-                        "description": "Countries List"
-                    }
-                }
-            }
-        },
-        "/api/location/regions": {
-            "get": {
-                "tags": [
-                    "Location"
-                ],
-                "operationId": "App\\Http\\Controllers\\Api\\LocationController::regions",
-                "parameters": [
-                    {
-                        "name": "q",
-                        "in": "query",
-                        "description": "Search string",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "required": true
-                },
-                "responses": {
-                    "200": {
-                        "description": "Regions List"
-                    }
-                }
-            }
-        },
-        "/api/location/cities": {
-            "get": {
-                "tags": [
-                    "Location"
-                ],
-                "operationId": "App\\Http\\Controllers\\Api\\LocationController::cities",
-                "parameters": [
-                    {
-                        "name": "q",
-                        "in": "query",
-                        "description": "Search string",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "required": true
-                },
-                "responses": {
-                    "200": {
-                        "description": "Cities List"
-                    }
-                }
-            }
-        },
         "/api/dating": {
             "get": {
                 "tags": [
@@ -761,6 +683,84 @@
                     }
                 }
             }
+        },
+        "/api/location/countries": {
+            "get": {
+                "tags": [
+                    "Location"
+                ],
+                "operationId": "Woodoocoder\\LaravelLocation\\LocationController::countries",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "Search string",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Countries List"
+                    }
+                }
+            }
+        },
+        "/api/location/regions": {
+            "get": {
+                "tags": [
+                    "Location"
+                ],
+                "operationId": "Woodoocoder\\LaravelLocation\\LocationController::regions",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "Search string",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Regions List"
+                    }
+                }
+            }
+        },
+        "/api/location/cities": {
+            "get": {
+                "tags": [
+                    "Location"
+                ],
+                "operationId": "Woodoocoder\\LaravelLocation\\LocationController::cities",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "Search string",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cities List"
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -987,6 +987,14 @@
                             "count_messages": {
                                 "type": "integer"
                             },
+                            "latest_message": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/Message"
+                                    }
+                                ]
+                            },
                             "created_at": {
                                 "type": "datetime"
                             }
@@ -1007,11 +1015,19 @@
                             "dialog_id": {
                                 "type": "integer"
                             },
-                            "user_id": {
-                                "type": "integer"
+                            "user": {
+                                "type": "object",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/DialogUser"
+                                    }
+                                ]
                             },
                             "message": {
                                 "type": "string"
+                            },
+                            "created_at": {
+                                "type": "datetime"
                             }
                         },
                         "type": "object"
@@ -1029,6 +1045,36 @@
                             },
                             "user": {
                                 "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                ]
+            },
+            "DialogUser": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "format": "integer"
+                            },
+                            "middlename": {
+                                "type": "string",
+                                "format": "string"
+                            },
+                            "lastname": {
+                                "type": "string",
+                                "format": "string"
+                            },
+                            "avatar_url": {
+                                "type": "string",
+                                "format": "string"
+                            },
+                            "last_activity": {
+                                "type": "string",
+                                "format": "date-time"
                             }
                         },
                         "type": "object"
