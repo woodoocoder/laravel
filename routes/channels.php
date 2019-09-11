@@ -11,6 +11,8 @@
 |
 */
 
-Broadcast::channel('App.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+Broadcast::channel('dialog_id.{id}', function ($user, $dialogId) {
+    if ($user->canJoinDialog($dialogId)) {
+        return ['id' => $user->id, 'firstname' => $user->firstname];
+    }
 });
