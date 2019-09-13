@@ -16,3 +16,7 @@ Broadcast::channel('dialog_id.{id}', function ($user, $dialogId) {
         return ['id' => $user->id, 'firstname' => $user->firstname];
     }
 });
+
+Broadcast::channel('dialogs.{toUserId}', function ($user, $toUserId) {
+    return $user->id == $toUserId;
+});
