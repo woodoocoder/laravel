@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
 use Woodoocoder\LaravelDialogs\Traits\Messagable;
+use App\Model\User\Like;
 
 
 class User extends Authenticatable {

@@ -20,3 +20,8 @@ Broadcast::channel('dialog_id.{id}', function ($user, $dialogId) {
 Broadcast::channel('dialogs.{toUserId}', function ($user, $toUserId) {
     return $user->id == $toUserId;
 });
+
+
+Broadcast::channel('likes.{toUserId}', function ($user, $toUserId) {
+    return $user->id == $toUserId;
+});

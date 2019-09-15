@@ -28,6 +28,10 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth:api'], function () {
     Route::put('', 'Api\UserController@update');
     Route::put('information', 'Api\UserController@updateInformation');
     Route::put('filters', 'Api\UserController@updateFilters');
+
+    Route::get('likes', 'Api\LikeController@likes');
+    Route::get('likes/matched', 'Api\LikeController@matched');
+    Route::post('likes/{userId}', 'Api\LikeController@store');
 });
 
 
