@@ -1286,16 +1286,16 @@
         },
         {
             "name": "laravel/passport",
-            "version": "v7.4.1",
+            "version": "v7.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "cc39dc6a36ebf5926906eb5ad3c62dba50c9bbd0"
+                "reference": "663e720a6d15e8ec70bf5309f774439a110efc89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/cc39dc6a36ebf5926906eb5ad3c62dba50c9bbd0",
-                "reference": "cc39dc6a36ebf5926906eb5ad3c62dba50c9bbd0",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/663e720a6d15e8ec70bf5309f774439a110efc89",
+                "reference": "663e720a6d15e8ec70bf5309f774439a110efc89",
                 "shasum": ""
             },
             "require": {
@@ -1353,7 +1353,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2019-09-10T19:55:34+00:00"
+            "time": "2019-09-24T20:59:35+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -2231,16 +2231,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.21",
+            "version": "2.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "9f1287e68b3f283339a9f98f67515dd619e5bf9d"
+                "reference": "c78eb5058d5bb1a183133c36d4ba5b6675dfa099"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/9f1287e68b3f283339a9f98f67515dd619e5bf9d",
-                "reference": "9f1287e68b3f283339a9f98f67515dd619e5bf9d",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/c78eb5058d5bb1a183133c36d4ba5b6675dfa099",
+                "reference": "c78eb5058d5bb1a183133c36d4ba5b6675dfa099",
                 "shasum": ""
             },
             "require": {
@@ -2274,28 +2274,28 @@
             "authors": [
                 {
                     "name": "Jim Wigginton",
-                    "role": "Lead Developer",
-                    "email": "terrafrost@php.net"
+                    "email": "terrafrost@php.net",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Patrick Monnerat",
-                    "role": "Developer",
-                    "email": "pm@datasphere.ch"
+                    "email": "pm@datasphere.ch",
+                    "role": "Developer"
                 },
                 {
                     "name": "Andreas Fischer",
-                    "role": "Developer",
-                    "email": "bantu@phpbb.com"
+                    "email": "bantu@phpbb.com",
+                    "role": "Developer"
                 },
                 {
                     "name": "Hans-Jürgen Petrich",
-                    "role": "Developer",
-                    "email": "petrich@tronic-media.com"
+                    "email": "petrich@tronic-media.com",
+                    "role": "Developer"
                 },
                 {
                     "name": "Graham Campbell",
-                    "role": "Developer",
-                    "email": "graham@alt-three.com"
+                    "email": "graham@alt-three.com",
+                    "role": "Developer"
                 }
             ],
             "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
@@ -2319,7 +2319,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2019-07-12T12:53:49+00:00"
+            "time": "2019-09-17T03:41:22+00:00"
         },
         {
             "name": "predis/predis",
@@ -2815,16 +2815,16 @@
         },
         {
             "name": "swagger-api/swagger-ui",
-            "version": "v3.23.9",
+            "version": "v3.23.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swagger-api/swagger-ui.git",
-                "reference": "c3890c210c4cab6073d1b8bb62c32ed69da6c464"
+                "reference": "77f4651cbf5b3767f0d79c91fd337de82b6ddee6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/c3890c210c4cab6073d1b8bb62c32ed69da6c464",
-                "reference": "c3890c210c4cab6073d1b8bb62c32ed69da6c464",
+                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/77f4651cbf5b3767f0d79c91fd337de82b6ddee6",
+                "reference": "77f4651cbf5b3767f0d79c91fd337de82b6ddee6",
                 "shasum": ""
             },
             "type": "library",
@@ -2868,7 +2868,7 @@
                 "swagger",
                 "ui"
             ],
-            "time": "2019-09-10T06:41:52+00:00"
+            "time": "2019-09-20T20:34:23+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4472,17 +4472,20 @@
         },
         {
             "name": "woodoocoder/laravel-dialogs",
-            "version": "0.2.0",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woodoocoder/laravel-dialogs.git",
-                "reference": "176ebeba1bfd104494ed6a66775dd6da5f3ce5ad"
+                "reference": "6b679bf58384a394ae5457c3f062fe7285dc0b78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woodoocoder/laravel-dialogs/zipball/176ebeba1bfd104494ed6a66775dd6da5f3ce5ad",
-                "reference": "176ebeba1bfd104494ed6a66775dd6da5f3ce5ad",
+                "url": "https://api.github.com/repos/woodoocoder/laravel-dialogs/zipball/6b679bf58384a394ae5457c3f062fe7285dc0b78",
+                "reference": "6b679bf58384a394ae5457c3f062fe7285dc0b78",
                 "shasum": ""
+            },
+            "require": {
+                "woodoocoder/laravel-helpers": "^0.1"
             },
             "type": "library",
             "extra": {
@@ -4508,7 +4511,7 @@
                     "email": "pavlyshyn.roma@gmail.com"
                 }
             ],
-            "time": "2019-09-13T23:31:10+00:00"
+            "time": "2019-09-15T21:46:45+00:00"
         },
         {
             "name": "woodoocoder/laravel-helpers",
@@ -4595,7 +4598,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/laravel-media",
-                "reference": "b6d066b900cfbdaa1b76d48b9fa87eb8105a9f2a"
+                "reference": "1326d7c15755f2c2023ae3cb49e2ed80c2e8e5d5"
             },
             "require": {
                 "woodoocoder/laravel-helpers": "^0.1"
@@ -5730,16 +5733,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "e899757bb3df5ff6e95089132f32cd59aac2220a"
+                "reference": "995192df77f63a59e47f025390d2d1fdf8f425ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/e899757bb3df5ff6e95089132f32cd59aac2220a",
-                "reference": "e899757bb3df5ff6e95089132f32cd59aac2220a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/995192df77f63a59e47f025390d2d1fdf8f425ff",
+                "reference": "995192df77f63a59e47f025390d2d1fdf8f425ff",
                 "shasum": ""
             },
             "require": {
@@ -5775,7 +5778,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2019-07-25T05:29:42+00:00"
+            "time": "2019-09-17T06:23:10+00:00"
         },
         {
             "name": "phpunit/phpunit",

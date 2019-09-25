@@ -625,6 +625,19 @@
                 }
             }
         },
+        "/api/dialogs/mark_reed/{dialogId}": {
+            "put": {
+                "tags": [
+                    "Dialogs"
+                ],
+                "operationId": "Woodoocoder\\LaravelDialogs\\Controllers\\DialogsController::mark_reed",
+                "responses": {
+                    "200": {
+                        "description": "Mark as reed all messages in Dialog"
+                    }
+                }
+            }
+        },
         "/api/dialogs/{dialogId}": {
             "get": {
                 "tags": [
